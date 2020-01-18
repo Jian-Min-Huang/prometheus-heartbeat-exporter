@@ -11,9 +11,14 @@ $ deactivate
 
 ### pip install
 ```
+(venv) $ pip3 install -r requirements.txt
+```
+```
 (venv) $ pip3 install prometheus_client
+(venv) $ pip3 install Flask
+(venv) $ pip3 install urllib3
+(venv) $ pip3 install APScheduler
 ```
 ```
 (venv) $ pip3 freeze | tee requirements.txt
-(venv) $ pip3 install -r requirements.txt
 ```
