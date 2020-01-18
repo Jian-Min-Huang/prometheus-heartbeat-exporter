@@ -6,9 +6,7 @@ Jinja2==2.10.3
 MarkupSafe==1.1.1
 prometheus-client==0.7.1
 pytz==2019.3
-schedule==0.6.0
 six==1.14.0
 tzlocal==2.0.0
 urllib3==1.25.7
-virtualenv==16.7.9
 Werkzeug==0.16.0
