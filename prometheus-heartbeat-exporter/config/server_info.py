@@ -4,6 +4,6 @@ def server_info():
             "url": "http://localhost:8000"
         },
         "server2": {
-            "url": "http://localhost:8000"
+            "url": "http://localhost:8001"
         }
     }

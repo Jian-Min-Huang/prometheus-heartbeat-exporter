@@ -15,11 +15,14 @@ def job():
         if key in gauges:
             gauge = gauges[key]
 
-            http = urllib3.PoolManager()
-            res = http.request(method="GET", url=value['url'])
-            print(f"{key} -> {res.status}")
+            try:
+                http = urllib3.PoolManager()
+                res = http.request(method="GET", url=value['url'])
+                # print(f"{key} -> {res.status}")
 
-            gauge.set_function(lambda: res.status)
+                gauge.set_function(lambda: res.status)
+            except:
+                gauge.set_function(lambda: 500.0)
         else:
             gauges[key] = Gauge(key, f'status of {key}')
 
