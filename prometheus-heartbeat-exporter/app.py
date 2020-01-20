@@ -1,4 +1,6 @@
 import atexit
+import json
+import os
 
 import urllib3
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -7,11 +9,12 @@ from prometheus_client import start_http_server, Gauge
 
 from config.server_info import server_info
 
+server_info = json.loads(os.getenv("SERVER_INFO"))
 gauges = {}
 
 
 def job():
-    for key, value in server_info().items():
+    for key, value in server_info.items():
         if key in gauges:
             gauge = gauges[key]
 
@@ -37,7 +40,7 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def root():
-    return make_response(server_info(), 200)
+    return make_response(server_info, 200)
 
 
 if __name__ == '__main__':

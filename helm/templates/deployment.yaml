@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: heartbeat
+  labels:
+    app: heartbeat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: heartbeat
+  template:
+    metadata:
+      labels:
+        app: heartbeat
+    spec:
+      containers:
+        - name: heartbeat
+          env:
+            - name: SERVER_INFO
+              valueFrom:
+                configMapKeyRef:
+                  key: SERVER_INFO
+                  name: heartbeat
+          image: jianminhuang/prometheus-heartbeat-exporter:1.0.0
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 5000
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 5000

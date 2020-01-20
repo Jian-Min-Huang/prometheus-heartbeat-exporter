@@ -1,0 +1,20 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: heartbeat
+  namespace: monitoring
+  labels:
+    app: heartbeat
+    chart: heartbeat-1.0.0
+    heritage: Tiller
+    release: prometheus-operator
+spec:
+  endpoints:
+    - port: metrics
+  namespaceSelector:
+    matchNames:
+      - default
+  selector:
+    matchLabels:
+      app: heartbeat
+      release: prometheus-operator

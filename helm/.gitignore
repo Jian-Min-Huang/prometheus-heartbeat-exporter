@@ -1,0 +1,6 @@
+### Mac ###
+.DS_Store
+
+*.lock
+
+k8s-sample-2020
