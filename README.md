@@ -22,8 +22,11 @@ $ deactivate
 ```
 (venv) $ pip3 freeze | tee requirements.txt
 ```
+```
+(venv) $ pip3 freeze | xargs pip3 uninstall -y
+```
 
 ### ENV
 ```
-{"server1":{"url": "http://localhost:8000"},"server2":{"url": "http://localhost:8001"}}
+{"root":{"url":"http://localhost:5000"},"server2":{"metrics":"http://localhost:5000/metrics"}}
 ```
