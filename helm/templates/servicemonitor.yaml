@@ -5,9 +5,8 @@ metadata:
   namespace: monitoring
   labels:
     app: heartbeat
-    chart: heartbeat-1.0.0
+    chart: heartbeat-1.0.1
     heritage: Tiller
-    release: prometheus-operator
 spec:
   endpoints:
     - port: metrics
@@ -17,4 +16,3 @@ spec:
   selector:
     matchLabels:
       app: heartbeat
-      release: prometheus-operator

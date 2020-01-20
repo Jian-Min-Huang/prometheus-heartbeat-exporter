@@ -5,4 +5,4 @@ metadata:
   labels:
     app: heartbeat
 data:
-  SERVER_INFO: '{"root":{"url":"http://localhost:5000"},"prometheus":{"url":"http://localhost:8000"}}'
+  SERVER_INFO: '{"root":{"url":"http://localhost:5000"},"metrics":{"url":"http://localhost:5000/metrics"}}'

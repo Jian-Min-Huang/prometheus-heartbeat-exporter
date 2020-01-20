@@ -4,15 +4,13 @@ metadata:
   name: heartbeat
   labels:
     app: heartbeat
-    chart: heartbeat-1.0.0
+    chart: heartbeat-1.0.1
     heritage: Tiller
-    release: prometheus-operator
 spec:
   ports:
     - name: metrics
-      port: 8000
+      port: 5000
       protocol: TCP
-      targetPort: 8000
+      targetPort: 5000
   selector:
     app: heartbeat
-    release: prometheus-operator

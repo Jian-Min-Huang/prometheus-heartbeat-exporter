@@ -5,7 +5,7 @@ metadata:
   labels:
     app: heartbeat
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: heartbeat
@@ -22,7 +22,7 @@ spec:
                 configMapKeyRef:
                   key: SERVER_INFO
                   name: heartbeat
-          image: jianminhuang/prometheus-heartbeat-exporter:1.0.0
+          image: jianminhuang/prometheus-heartbeat-exporter:1.0.1
           imagePullPolicy: Always
           ports:
             - containerPort: 5000
