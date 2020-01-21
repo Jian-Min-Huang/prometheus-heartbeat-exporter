@@ -1,0 +1,8 @@
+
+Thank you for installing {{ .Chart.Name }}.
+
+Your release is named {{ .Release.Name }}.
+
+To configure about the release, try:
+
+    kubectl edit configmap heartbeat

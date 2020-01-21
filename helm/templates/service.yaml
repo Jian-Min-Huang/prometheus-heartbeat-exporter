@@ -4,8 +4,6 @@ metadata:
   name: heartbeat
   labels:
     app: heartbeat
-    chart: heartbeat-1.0.1
-    heritage: Tiller
 spec:
   ports:
     - name: metrics
