@@ -1,4 +1,5 @@
 FROM python:3-slim
+MAINTAINER yfr.huang@hotmail.com
 
 ADD . /prometheus-heartbeat-exporter
 WORKDIR /prometheus-heartbeat-exporter

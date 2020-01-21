@@ -28,5 +28,17 @@ $ deactivate
 
 ### ENV
 ```
-{"root":{"url":"http://localhost:5000"},"server2":{"metrics":"http://localhost:5000/metrics"}}
+{"root":{"url":"http://localhost:5000"},"metrics":{"url":"http://localhost:5000/metrics"}}
+```
+
+### DEBUG
+```
+release: prometheus-operator
+can discover on prometheus but will cause service can't visit
+kubectl edit prometheuses prometheus-operator-prometheus -n monitoring
+>> serviceMonitorSelector: {}
+```
+```
+if discover on prometheus but monitoring/heartbeat/0 (0/0 up)
+probably your endpoint not at /metrics
 ```
