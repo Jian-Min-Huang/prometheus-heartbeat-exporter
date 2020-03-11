@@ -1,7 +1,7 @@
-# * prometheus-heartbeat-exporter
+# prometheus-heartbeat-exporter
 > this app is inspired by Heartbeat 💓 in Elastic Stacks, it will invoke endpoints by configuration and export 🔀 information to Prometheus.
 
-# * Development
+# Development
 
 ### setup venv
 ```
@@ -30,8 +30,6 @@ $ deactivate
 ```
 SERVER_INFO={"root":{"url":"http://localhost:5000"},"metrics":{"url":"http://localhost:5000/metrics"}}
 ```
-
-# * Deployment
 
 ### Helm
 ```
