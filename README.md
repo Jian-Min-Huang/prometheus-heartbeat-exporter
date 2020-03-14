@@ -1,7 +1,7 @@
-# prometheus-heartbeat-exporter
+health-exporter
 > this app is inspired by Heartbeat 💓 in Elastic Stacks, it will invoke endpoints by configuration and export 🔀 information to Prometheus.
 
-### setup venv
+## setup venv
 ```
 $ pip3 install virtualenv
 $ virtualenv venv
@@ -9,7 +9,7 @@ $ source venv/bin/activate
 $ deactivate
 ```
 
-### pip install
+## pip install
 ```
 (venv) $ pip3 install -r requirements.txt
  or
@@ -24,18 +24,18 @@ $ deactivate
 (venv) $ pip3 freeze | xargs pip3 uninstall -y
 ```
 
-### ENV
+## ENV
 ```
 SERVER_INFO={"root":{"url":"http://localhost:5000"},"metrics":{"url":"http://localhost:5000/metrics"}}
 ```
 
-### Helm
+## Helm
 ```
 $ helm install --name heartbeat ./helm
 $ helm upgrade --force heartbeat ./helm
 ```
 
-### DEBUG
+## DEBUG
 ```
 add release: prometheus-operator
 then can discover on prometheus but will cause service can't visit
@@ -47,5 +47,5 @@ if discover on prometheus but monitoring/heartbeat/0 (0/0 up)
 probably your endpoint not at /metrics
 ```
 
-### References
+## References
 * https://www.elastic.co/cn/downloads/beats
