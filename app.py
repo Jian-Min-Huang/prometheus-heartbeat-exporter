@@ -32,7 +32,7 @@ def job():
 
                     gauge.set_function(lambda: value)
             except:
-                gauge.set_function(lambda: -1000000)
+                gauge.set_function(lambda: 1000000)
         else:
             gauges[key] = Gauge(key, f"status of {key}", registry=REGISTRY)
 
