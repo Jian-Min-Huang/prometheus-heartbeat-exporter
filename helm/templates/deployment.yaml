@@ -1,28 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: heartbeat
+  name: health-exporter
   labels:
-    app: heartbeat
+    app: health-exporter
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: heartbeat
+      app: health-exporter
   template:
     metadata:
       labels:
-        app: heartbeat
+        app: health-exporter
     spec:
       containers:
-        - name: heartbeat
+        - name: health-exporter
           env:
             - name: SERVER_INFO
               valueFrom:
                 configMapKeyRef:
                   key: SERVER_INFO
-                  name: heartbeat
-          image: jianminhuang/prometheus-heartbeat-exporter:1.0.1
+                  name: health-exporter
+          image: jianminhuang/health-exporter:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 5000

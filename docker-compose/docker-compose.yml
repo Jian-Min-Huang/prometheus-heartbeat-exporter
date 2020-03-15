@@ -1,13 +1,13 @@
 version: "3"
 
 services:
-  heartbeat:
-    image: jianminhuang/prometheus-heartbeat-exporter:1.0.1
+  health-exporter:
+    image: jianminhuang/health-exporter:latest
     ports:
       - "5000:5000"
     privileged: true
     environment:
-      SERVER_INFO: '{"root":{"url":"http://localhost:5000"},"server2":{"metrics":"http://localhost:5000/metrics"}}'
+      SERVER_INFO: '{"root":{"url":"http://localhost:5000"},"metrics":{"url":"http://localhost:5000/metrics"},"response":{"metric":"https://httpbin.org/response-headers","method":"GET","expr":"body[\"Content-Length\"]"}}'
 
 networks:
   default:

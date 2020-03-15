@@ -1,10 +1,10 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: heartbeat
+  name: health-exporter
   namespace: monitoring
   labels:
-    app: heartbeat
+    app: health-exporter
 spec:
   endpoints:
     - port: metrics
@@ -13,4 +13,4 @@ spec:
       - default
   selector:
     matchLabels:
-      app: heartbeat
+      app: health-exporter

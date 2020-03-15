@@ -20,12 +20,19 @@ def job():
 
             try:
                 http = urllib3.PoolManager()
-                res = http.request(method="GET", url=value["url"])
-                print(f"{key} -> {res.status}")
 
-                gauge.set_function(lambda: res.status)
+                if "url" in value:
+                    res = http.request(method="GET", url=value["url"])
+
+                    gauge.set_function(lambda: res.status)
+                if "metric" in value:
+                    res = http.request(method=value["method"], url=value["metric"])
+                    body = json.loads(res.data.decode("utf-8"))
+                    value = eval(value["expr"])
+
+                    gauge.set_function(lambda: value)
             except:
-                gauge.set_function(lambda: 500.0)
+                gauge.set_function(lambda: -1000000)
         else:
             gauges[key] = Gauge(key, f"status of {key}", registry=REGISTRY)
 

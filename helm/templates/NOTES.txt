@@ -5,4 +5,4 @@ Your release is named {{ .Release.Name }}.
 
 To configure about the release, try:
 
-    kubectl edit configmap heartbeat
+    kubectl edit configmap health-exporter
