@@ -1,4 +1,4 @@
-# health-exporter ![Publish Docker](https://github.com/Jian-Min-Huang/health-exporter/workflows/Publish%20Docker/badge.svg?branch=master&event=push)
+# health-exporter ![Publish Docker](https://github.com/Jian-Min-Huang/health-exporter/workflows/Publish%20Docker/badge.svg?branch=master&event=push) [![Docker Image Version (latest semver)](https://img.shields.io/docker/v/jianminhuang/health-exporter)](https://hub.docker.com/r/jianminhuang/health-exporter)
 > this app is inspired by Heartbeat 💓 in Elastic Stacks, it will invoke endpoints by configuration and export 🔀 information to Prometheus.
 
 ## setup venv
